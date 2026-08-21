@@ -1,25 +1,93 @@
 <html>
-  <body>
-    <H1>Git-Advanced</H1>
-	<p>A collection of tips for handling advanced Git situations.</p>
-	<h3>Lost Remote Repository</h3>
-	<a href="./LostRemoteRepo.mp4">Video</a><br/><br/>
-	<b>Procedure</b>
-	<ul>
-	  <li>Create an empty repository on your chosen GitWorld</li>
-	  <li>Create an application key authorized to write repositories</li>
-	  <li style="background-color:lightblue">git remote remove origin</li>
-	  <li style="background-color:lightblue">remote add origin URL_AND_APL_KEY_TO_DST_GITWORLD_REPO</li>
-	  <li style="background-color:lightblue">git push origin main</li>
-	</ul>
-	<br/><br/>
-	<h3>Merge Conflict</h3>
-	<a href="./MergeConflict.mp4">Video</a><br/><br/>
-	<b>Tools reference</b>
-	<ul>
-	  <li><a href="https://winmerge.org/">WinMerge</A></li>
-	  <li><a href="https://gitforwindows.org/">Git for Windows</a></li>
-	  <li><a href="https://gitextensions.github.io/">Git Extensions</a></li>
-	</ul>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Git-Advanced</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col12">
+               <H1>Git-Advanced</H1>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col12">
+               <p>Når GitHub-Desktop ikke er nok...</p>
+               <p>Disse situationer dækkes ikke i undervisningen, men det forhindrer dem ikke i at opstå!</p>
+               <p>Som alle andre in-app git-tools har også Github-Desktop sine begrænsninger. Her finder du så mulige løsninger på situationer som ellers synes uløselige.</p>
+               <p>Vær opmærksom på at disse løsninger inkluderer CLI (Command Line Interface) anvendelse af Git og også andre Git tools.</p>
+            </div>
+         </div>
+         <div class="row" style="background-color:lightblue">
+            <div class="col12">
+               <h3>Repository migration</h3>
+               <a href="./LostRemoteRepo.mp4">Video</a><br/><br/>
+               <ul>
+                  <li>Hvordan flytter jeg mit git fra et GitWorld system til et andet GitWorld system</li>
+                  <li>Vore gruppe splittede og jeg vil lave en kopi af projekt-repository som jeg har skriverettighed til</li>
+               </ul>
+               <b>Procedure</b>
+               <ul>
+                  <li>Opret et tomt repository i destinations-GitWorld</li>
+                  <li>Sørg for at have en skrive-tilladt application-key</li>
+                  <li>I command line interface: Udfør disse 3 kommandoer</li>
+               </ul>
+               <p style="background-color:white">
+                  git remote remove origin<br/>
+                  remote add origin https://APL_KEY@DST_GITWORLD_REPO<br/>
+                  git push origin main<br/>
+               </p>
+                <br/><br/>
+            </div>
+         </div>
+         <div class="row" style="background-color:white">
+            <div class="col12">
+               <br/>
+            </div>
+         </div>
+          <div class="row" style="background-color:lightgreen">
+            <div class="col12">
+               <h3>Merge Conflict</h3>
+               <a href="./MergeConflict.mp4">Video</a><br/><br/>
+               <ul>
+                  <li>Github-Desktop kan ikke løse min merge conflict</li>
+                  <li>Jeg vil gerne have et bedre visuelt merge conflict værktøj</li>
+               </ul>
+               <b>Tools reference</b>
+               <ul>
+                  <li><a href="https://winmerge.org/">WinMerge</A></li>
+                  <li><a href="https://gitforwindows.org/">Git for Windows</a></li>
+                  <li><a href="https://gitextensions.github.io/">Git Extensions</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="row" style="background-color:white">
+            <div class="col12">
+               <br/>
+            </div>
+         </div>
+         <div class="row" style="background-color:lightblue">
+            <div class="col12">
+            <h3>Retrospekt aktivering af .gitigore</h3>
+            <a href="./MergeConflict.mp4">Video</a><br/><br/>
+            <ul>
+               <li>Jeg glemte .gitignore så nu er der mange binære filer i mit repository</li>
+               <li>Jeg har ændret .gitignore men der er stadig gamle uønskede filer</li>
+            </ul>
+            <b>Procedure</b>
+               <ul>
+                  <li>Commit og push alle ændringer. Ellers risikerer du at miste de ændringer, du har foretaget</li>
+                  <li>I command line interface: Udfør disse 3 kommandoer</li>
+               </ul>
+               <p style="background-color:white">
+                  git rm -r --cached . << Husk punktum til sidst!<br/>
+                  git add . << Husk punktum til sidst!<br/>
+                  git commit -m ".gitignore is now working"
+               </p>
+            </div>
+         </div>
+      </div>
   </body>
 </html>
